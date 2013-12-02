@@ -18,7 +18,7 @@ Crafty.scene("main", function() {
 
 	function createPlayer() {
 		player = Crafty.e("2D, Canvas, larry, RightControls, Hero, Animate, Collision")
-			.attr({x: 160, y: 144, z: 1})
+			.attr({x: 120*4, y: 110*4, z: 1})
 			.rightControls(4);
 	}
 
@@ -85,44 +85,20 @@ Crafty.scene("main", function() {
   	Crafty.e("2D, Canvas, leftys").
   		attr({x:0, y:0})
 
-    // Generate the grass along the x-axis
-    // for (var i = 0; i < 25; i++) {
-    //   // Generate the grass along the y-axis
-    //   for (var j = 0; j < 20; j++) {
-    //     grassType = Crafty.math.randomInt(1, 4);
-    //     Crafty.e("2D, Canvas, grass" + grassType)
-    //       .attr({x: i * 16, y: j * 16});
+  	Crafty.c("Wall", {
+  		init: function() {
+  			this.requires("2D, Canvas, Collision, solid");
+  		},
+  		wall: function(left, top, width, height) {
+  			this.attr({x:left, y:top, w: width, h: height})
+  					.collision(new Crafty.polygon([left,top], [left+width, top], [left+width, top+height], [left, top+height]))
+  		}
+  	});
 
-    //     // 1/50 chance of drawing a flower and only within the bushes
-    //     if (i > 0 && i < 24 && j > 0 && j < 19 && Crafty.math.randomInt(0, 50) > 49) {
-
-    //       Crafty.e("2D, Canvas, flower, SpriteAnimation")
-    //         .attr({x: i * 16, y: j * 16})
-    //         .animate("wind", 0, 1, 3)
-    //         .bind("enterframe", function() {
-    //           if (!this.isPlaying())
-    //             this.animate("wind", 80);
-    //         });
-    //     }
-    //   }
-    // }
-
-    // // Create the bushes along the x-axis which will form the boundaries
-    // for (var i = 0; i < 25; i++) {
-    //   Crafty.e("2D, Canvas, wall_top, solid, bush"+Crafty.math.randomInt(1,2))
-    //     .attr({x: i * 16, y: 0, z: 2});
-    //   Crafty.e("2D, Canvas, wall_bottom, solid, bush"+Crafty.math.randomInt(1,2))
-    //     .attr({x: i * 16, y: 304, z: 2});
-    // }
-
-    // // Create the bushes along the y-axis
-    // // We need to start one more and one less to not overlap the previous bushes
-    // for (var i = 1; i < 19; i++) {
-    //   Crafty.e("2D, DOM, canvas, wall_left, solid, bush" + Crafty.math.randomInt(1,2))
-    //     .attr({x: 0, y: i * 16, z: 2});
-    //   Crafty.e("2D, DOM, canvas, wall_right, solid, bush" + Crafty.math.randomInt(1,2))
-    //     .attr({x: 384, y: i * 16, z: 2});
-    // }
+  	// barriers to movement
+  	Crafty.e("2D, Canvas, Wall").wall(0,0,4*320,4*100);
+  	Crafty.e("2D, Canvas, Wall").wall(0,0,4*100,4*110);
+  	Crafty.e("2D, Canvas, Wall").wall(4*170,0,4*100,4*110);
   }
 
 });
