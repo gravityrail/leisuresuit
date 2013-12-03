@@ -6,7 +6,7 @@ var mountFolder = function (connect, dir) {
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		clean: ['dist'],
+		clean: [],//'dist'
 		uglify: {
 			build: {
 				files: [{
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
               expand: true,
               flatten: true,
               cwd: 'app/src/bower_components/',
-              src: ['backbone/backbone-min.js', 'backbone/backbone-min.map', 'underscore/underscore-min.js', 'underscore/underscore-min.map'],
+              src: ['modernizr/modernizr.js', 'backbone/backbone-min.js', 'backbone/backbone-min.map', 'underscore/underscore-min.js', 'underscore/underscore-min.map'],
               dest: 'dist/src/libs/',
               filter: 'isFile'
             },
@@ -46,13 +46,26 @@ module.exports = function(grunt) {
               src: ['**/*'],
               dest: 'dist/src/libs/',
               filter: 'isFile'
-            }, 
+            },
             {
             	expand: true,
             	cwd: 'app/web',
             	src: ['**/*'],
             	dest: 'dist/web',
             	filter: 'isFile'
+            },
+            {
+              expand: true,
+              dest: 'dist',
+              cwd: 'heroku',
+              src: '*',
+              rename: function (dest, src) {
+                var path = require('path');
+                if (src === 'distpackage.json') {
+                  return path.join(dest, 'package.json');
+                }
+                return path.join(dest, src);
+              }
             }]
           }
         },
