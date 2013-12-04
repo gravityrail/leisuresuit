@@ -44,6 +44,6 @@ Crafty.c('Hero', {
     return this;
   },
   isOutOfBounds: function() {
-    return (this.x < 0 || this.x > 4*320 || this.y < 0 || this.y > (4*166-4*32))
+    return (this.x < 0 || this.x > (4*320-4*14) || this.y < 0 || this.y > (4*166-4*32))
   }
 });
