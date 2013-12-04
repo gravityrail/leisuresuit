@@ -39,7 +39,8 @@ Sprites = Backbone.Model.extend({
                 tile: 320*4,
                 tileh: 168*4,
                 elements: {
-                    leftys: [9, 0]
+                    bg_leftys: [9, 0],
+                    bg_leftys_interior: [2, 1]
                 }
             }
         }
