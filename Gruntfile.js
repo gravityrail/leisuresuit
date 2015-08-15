@@ -6,7 +6,7 @@ var mountFolder = function (connect, dir) {
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		clean: [],//'dist'
+		clean: ['dist'],//'dist'
 		uglify: {
 			build: {
 				files: [{
