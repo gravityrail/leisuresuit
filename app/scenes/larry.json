@@ -1,0 +1,124 @@
+{
+  "height": 100,
+  "layers": [{
+    "compression": "zlib",
+    "data": "eJztzjENAAAIA7Dd+BeMhh2Ep1XQBAB68x0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOLJ4mgAL",
+    "encoding": "base64",
+    "height": 100,
+    "name": "Backgrounds",
+    "opacity": 1,
+    "type": "tilelayer",
+    "visible": true,
+    "width": 100,
+    "x": 0,
+    "y": 0
+  }, {
+    "draworder": "topdown",
+    "height": 100,
+    "name": "Objects",
+    "objects": [{
+      "height": 158,
+      "id": 1,
+      "name": "",
+      "properties": {
+
+      },
+      "rotation": 0,
+      "type": "",
+      "visible": true,
+      "width": 454,
+      "x": 1126,
+      "y": 1577
+    }, {
+      "height": 0,
+      "id": 4,
+      "name": "",
+      "polyline": [{
+        "x": -1.45025621193077,
+        "y": -1.45025621193077
+      }, {
+        "x": -0.805152979066023,
+        "y": 124.3961352657
+      }, {
+        "x": 14.4927536231884,
+        "y": 122.383252818035
+      }, {
+        "x": 14.4927536231884,
+        "y": 131.239935587762
+      }, {
+        "x": 95.0080515297907,
+        "y": 132.045088566828
+      }, {
+        "x": 114.538902635403,
+        "y": 122.383252818035
+      }, {
+        "x": 114.734299516908,
+        "y": 82.1256038647343
+      }, {
+        "x": 150.723655787282,
+        "y": 82.0279054239818
+      }, {
+        "x": 150.649522799576,
+        "y": 120.553984525352
+      }, {
+        "x": 172.705314009662,
+        "y": 131.642512077295
+      }, {
+        "x": 262.882447665056,
+        "y": 132.045088566828
+      }, {
+        "x": 262.882447665056,
+        "y": 105.877616747182
+      }, {
+        "x": 318.438003220612,
+        "y": 120.37037037037
+      }, {
+        "x": 318.438003220612,
+        "y": -2.01288244766506
+      }, {
+        "x": -1.61194070748527,
+        "y": -2.0937246954423
+      }],
+      "properties": {
+
+      },
+      "rotation": 0,
+      "type": "",
+      "visible": true,
+      "width": 0,
+      "x": 1.61030595813205,
+      "y": 2.01288244766506
+    }],
+    "opacity": 1,
+    "type": "objectgroup",
+    "visible": true,
+    "width": 100,
+    "x": 0,
+    "y": 0
+  }],
+  "nextobjectid": 8,
+  "orientation": "orthogonal",
+  "properties": {
+
+  },
+  "renderorder": "right-down",
+  "tileheight": 32,
+  "tilesets": [{
+    "firstgid": 1,
+    "image": "..\/..\/web\/images\/lsl1bgs.png",
+    "imageheight": 672,
+    "imagewidth": 3520,
+    "margin": 0,
+    "name": "lsl1bgs",
+    "properties": {
+
+    },
+    "spacing": 0,
+    "tilecount": 44,
+    "tileheight": 168,
+    "tilewidth": 320
+  }],
+  "tilewidth": 32,
+  "version": 1,
+  "width": 100
+}

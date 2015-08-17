@@ -1,0 +1,20 @@
+var Backbone = require('backbone');
+
+module.exports = Backbone.Model.extend({
+	defaults: {
+		'entity': null
+	},
+	initialize: function() {
+
+	},
+	getEntity: function() {
+		return this.get('entity');
+	},
+	remove: function() {
+		var entity = this.getEntity();
+
+		if (entity) {
+			entity.destroy();
+		}
+	}
+});
