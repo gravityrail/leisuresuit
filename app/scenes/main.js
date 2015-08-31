@@ -9,7 +9,7 @@ function generateWorld() {
 		// .wall(scale(170), 0, scale(100), scale(110))
 		.door('leftys', scale(115), scale(60), scale(35), scale(70))
 		// .wall(0, 0, scale(100), scale(110))
-		.polygon(tilemap.layers[1].objects[1].polyline);
+		.shape(tilemap.layers[1].objects[1].polyline);
 
 	// grab tile data
 	// var data = new Buffer(tilemap.layers[0].data, 'base64');

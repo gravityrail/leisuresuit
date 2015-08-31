@@ -30,19 +30,41 @@ module.exports = Crafty.c('Hero', {
 			})
 		// A rudimentary way to prevent the user from passing Solid areas
 		.bind('Moved', function(from) {
+			// var walls = this.hit('Wall');
+			// if (walls) { 
+			// 	console.log("hit wall");
+			// 	this.attr({
+			// 		x: from.x,
+			// 		y: from.y
+			// 	});
+			// 	return;
+			// }
+			
 			var doors = this.hit('Door');
 			if (doors) {
+				console.log("Hit door(s)");
+				console.log(doors);
 				var door = doors[0];
 				Crafty.scene(door.obj.destination);
 				return;
 			}
-			if (this.hit('Solid') || this.isOutOfBounds()) {
+			if (this.hit('Shape') || this.hit('Wall') || this.isOutOfBounds()) {
+				console.log("hit shape, wall or boundary");
 				this.attr({
 					x: from.x,
 					y: from.y
 				});
 			}
+		})
+		.checkHits("Wall")
+		.onHit("Wall", function(input) {
+			console.log('hit wall');
+			console.log(input);
+		}).onHit("Shape", function(input) {
+			console.log('hit shape');
+			console.log(input);
 		});
+
 		return this;
 	},
 	isOutOfBounds: function() {

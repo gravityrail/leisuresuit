@@ -14,19 +14,20 @@ module.exports = Crafty.c("Background", {
 		return this;
 	},
 	wall: function(x, y, w, h) {
-		Crafty.e("2D, Canvas, Wall").wall(x, y, w, h);
+		Crafty.e("Wall").wall(x, y, w, h);
 		return this;
 	},
 	door: function(scene, x, y, w, h) {
-		Crafty.e("2D, Canvas, Wall, SolidHitBox, WiredHitBox, Door").wall(x, y, w, h).door(scene);
+		Crafty.e("Door").wall(x, y, w, h).door(scene);
 		return this;
 	},
-	polygon: function(polyArray) {
+	shape: function(polyArray) {
+		// convert a tilemap array to a crafty polygon
 		polyArray = polyArray.map(function(point) {
-			return [scale(point.x), scale(point.y)];
+			return [scale(Math.max(0, point.x)), scale(Math.max(0, point.y))];
 		});
-		console.log(polyArray);
-		Crafty.e("2D, Canvas, Solid, SolidHitBox, WiredHitBox, Collision").collision(new Crafty.polygon(polyArray));
+		polyArray.pop(); // by default tilemap includes last point at same position as first
+		Crafty.e("Shape").shape(new Crafty.polygon(polyArray));
 		return this;
 	}
 });

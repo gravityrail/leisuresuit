@@ -8,6 +8,7 @@ require('./components/background');
 require('./components/wall');
 require('./components/door');
 require('./components/hero');
+require('./components/shape');
 require('./components/right_controls');
 require('./scenes/leftys');
 require('./scenes/main');

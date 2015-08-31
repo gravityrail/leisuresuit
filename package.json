@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "beefy --cwd app app/game.js"
+    "start": "beefy --live --cwd app app/game.js"
   },
   "dependencies": {},
   "devDependencies": {
