@@ -28,7 +28,7 @@ module.exports = Crafty.c('Hero', {
 					this.pauseAnimation();
 				}
 			})
-		// A rudimentary way to prevent the user from passing solid areas
+		// A rudimentary way to prevent the user from passing Solid areas
 		.bind('Moved', function(from) {
 			var doors = this.hit('Door');
 			if (doors) {
@@ -36,7 +36,7 @@ module.exports = Crafty.c('Hero', {
 				Crafty.scene(door.obj.destination);
 				return;
 			}
-			if (this.hit('solid') || this.isOutOfBounds()) {
+			if (this.hit('Solid') || this.isOutOfBounds()) {
 				this.attr({
 					x: from.x,
 					y: from.y

@@ -26,8 +26,7 @@ module.exports = Crafty.c("Background", {
 			return [scale(point.x), scale(point.y)];
 		});
 		console.log(polyArray);
-		var entity = Crafty.e("2D, Canvas, solid, SolidHitBox, WiredHitBox, Collision");
-		entity.collision(new Crafty.polygon(polyArray));
+		Crafty.e("2D, Canvas, Solid, SolidHitBox, WiredHitBox, Collision").collision(new Crafty.polygon(polyArray));
 		return this;
 	}
 });

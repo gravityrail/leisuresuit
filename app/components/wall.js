@@ -2,7 +2,7 @@ var Crafty = require('craftyjs');
 
 module.exports = Crafty.c("Wall", {
 	init: function() {
-		this.requires("2D, Canvas, solid, Collision");
+		this.requires("2D, Canvas, Solid, Collision");
 	},
 	wall: function(left, top, width, height) {
 		this.attr({
