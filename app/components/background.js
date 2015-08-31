@@ -1,4 +1,5 @@
-var Crafty = require('craftyjs');
+var Crafty = require('craftyjs'),
+	scale = require('../scale');
 
 module.exports = Crafty.c("Background", {
 	init: function() {
@@ -17,7 +18,16 @@ module.exports = Crafty.c("Background", {
 		return this;
 	},
 	door: function(scene, x, y, w, h) {
-		Crafty.e("2D, Canvas, Wall, Door").wall(x, y, w, h).door(scene);
+		Crafty.e("2D, Canvas, Wall, SolidHitBox, WiredHitBox, Door").wall(x, y, w, h).door(scene);
+		return this;
+	},
+	polygon: function(polyArray) {
+		polyArray = polyArray.map(function(point) {
+			return [scale(point.x), scale(point.y)];
+		});
+		console.log(polyArray);
+		var entity = Crafty.e("2D, Canvas, solid, SolidHitBox, WiredHitBox, Collision");
+		entity.collision(new Crafty.polygon(polyArray));
 		return this;
 	}
 });

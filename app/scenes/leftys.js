@@ -1,14 +1,5 @@
-var scale = require('../scale');
-
-function createPlayer() {
-	player = Crafty.e("2D, Canvas, larry, RightControls, Hero, Animate, Collision")
-		.attr({
-			x: scale(120),
-			y: scale(110),
-			z: 1
-		})
-		.rightControls(4);
-}
+var scale = require('../scale'),
+	larry = require('../larry');
 
 function generateWorld() {
 	Crafty.e("Background")
@@ -19,5 +10,5 @@ function generateWorld() {
 
 module.exports = Crafty.defineScene("leftys", function() {
 	generateWorld();
-	createPlayer();
+	larry.init();
 });

@@ -105,7 +105,7 @@
   "tileheight": 32,
   "tilesets": [{
     "firstgid": 1,
-    "image": "..\/..\/web\/images\/lsl1bgs.png",
+    "image": "..\/images\/lsl1bgs.png",
     "imageheight": 672,
     "imagewidth": 3520,
     "margin": 0,
