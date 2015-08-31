@@ -1,6 +1,5 @@
 var Crafty = require('craftyjs'),
 	Sprites = require("./sprites.js"),
-	Config = require('./config.js'),
 	Backbone = require('backbone'),
 	MouseHover = require('./components/MouseHover.js'),
 	BaseEntity = require('./entities/base/BaseEntity.js');
@@ -12,12 +11,6 @@ require('./components/hero');
 require('./components/right_controls');
 require('./scenes/leftys');
 require('./scenes/main');
-
-var gameContainer = {
-		env: 'dev',
-		gameVersion: '0.0.1',
-		scene: 'main'
-	};
 
 Crafty.paths({
 	"sprites": "./images"
@@ -38,12 +31,8 @@ window.onload = function() {
 	Crafty.canvas.init();
 
 	// Create Sprites
-	console.log("creating sprites");
 	var sprites = new Sprites();
 	sprites.create();
 
-	// Load config
-	gameContainer['conf'] = new Config({});
-
-	Crafty.scene(gameContainer.scene);
+	Crafty.scene('main');
 };
