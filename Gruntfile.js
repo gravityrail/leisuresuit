@@ -71,18 +71,18 @@ module.exports = function(grunt) {
           hostname: 'localhost',
           base: "app/"
         }
-      },
-      livereload: {
-        options: {
-          middleware: function(connect) {
-            return [require('connect-livereload')({
-                port: LIVERELOAD_PORT
-              }),
-              mountFolder(connect, '.')
-            ];
-          }
-        }
       }
+      // livereload: {
+      //   options: {
+      //     middleware: function(connect) {
+      //       return [require('connect-livereload')({
+      //           port: LIVERELOAD_PORT
+      //         }),
+      //         mountFolder(connect, '.')
+      //       ];
+      //     }
+      //   }
+      // }
     },
     open: {
       server: {
@@ -110,7 +110,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-livereload');
   grunt.loadNpmTasks('grunt-open');
 
   grunt.registerTask('build', ['clean', 'uglify', 'copy']);

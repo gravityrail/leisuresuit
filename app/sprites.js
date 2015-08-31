@@ -78,8 +78,6 @@ var Sprites = Backbone.Model.extend({
 			i++;
 		});
 
-		console.log(array);
-
 		return array;
 	}
 });
